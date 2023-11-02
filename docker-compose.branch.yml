@@ -10,7 +10,10 @@ services:
     volumes:
       # Mount emoncms files from local FS for dev
       - ../../energylocal/emoncms:/var/www/emoncms
-      - ../../energylocal/cydynni/club-module:/var/www/emoncms/Modules/club
+      - ../../energylocal/cydynni/www/club:/var/www/emoncms/Modules/club
+      - ../../energylocal/cydynni/www/account:/var/www/emoncms/Modules/account
+      - ../../energylocal/cydynni/www/data:/var/www/emoncms/Modules/data
+      - ../../energylocal/cydynni/www/tariff:/var/www/emoncms/Modules/tariff
       - ../app:/var/www/emoncms/Modules/app
       - ../club2:/var/www/emoncms/Modules/club2
       - ../demandshaper/demandshaper-module:/var/www/emoncms/Modules/demandshaper
