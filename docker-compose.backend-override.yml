@@ -1,0 +1,65 @@
+# dev enviroment setup
+
+version: '2'
+services:
+
+  web:
+    ports:
+      # Expose Emoncms on localhost port 8080
+      - 8080:80
+    volumes:
+      # Mount emoncms files from local FS for dev
+      - ../../emoncms/emoncms:/var/www/emoncms
+      - ../../energylocal/backend/www/Modules/account:/var/www/emoncms/Modules/account
+      - ../../energylocal/backend/www/Modules/club:/var/www/emoncms/Modules/club
+      - ../../energylocal/backend/www/Modules/data:/var/www/emoncms/Modules/data
+      - ../../energylocal/backend/www/Modules/octopus:/var/www/emoncms/Modules/octopus
+      - ../../energylocal/backend/www/Modules/tariff:/var/www/emoncms/Modules/tariff
+      - ../../energylocal/backend/www/Modules/tma:/var/www/emoncms/Modules/tma
+      # - ../app:/var/www/emoncms/Modules/app
+      # - ../club2:/var/www/emoncms/Modules/club2
+      # - ../demandshaper/demandshaper-module:/var/www/emoncms/Modules/demandshaper
+      # - ../device:/var/www/emoncms/Modules/device
+      # - ../find:/var/www/emoncms/Modules/find
+      #- ../graph:/var/www/emoncms/Modules/graph
+      # - ../input:/var/www/emoncms/Modules/input
+      #- ../postprocess/postprocess-module:/var/www/emoncms/Modules/postprocess
+      # - ../process:/var/www/emoncms/Modules/process
+      #- ../provision:/var/www/emoncms/Modules/provision
+        # - ../remoteaccess-server/remoteaccess-module:/var/www/emoncms/Modules/remoteaccess
+      # - ../schedule:/var/www/emoncms/Modules/schedule
+      # - ../sync/sync-module:/var/www/emoncms/Modules/sync
+      # - ../time:/var/www/emoncms/Modules/time
+      # - ../user:/var/www/emoncms/Modules/user
+      # - ../vis:/var/www/emoncms/Modules/vis
+      - ../../energylocal/backend/www/Modules/account:/opt/emoncms/modules/account
+      - ../../energylocal/backend/www/Modules/club:/opt/emoncms/modules/club
+      - ../../energylocal/backend/www/Modules/data:/opt/emoncms/modules/data
+      - ../../energylocal/backend/www/Modules/octopus:/opt/emoncms/modules/octopus
+      - ../../energylocal/backend/www/Modules/tariff:/opt/emoncms/modules/tariff
+      - ../../energylocal/backend/www/Modules/tma:/opt/emoncms/modules/tma
+      - ../:/opt/emoncms/modules
+        #- ../../energylocal/backend:/opt/emoncms/modules/backend
+      - ./phpfina:/var/lib/phpfina
+    env_file:
+      # Use default enviroment variables file for dev
+      - 'backend.docker-env'
+
+  db:
+    ports:
+      - 3306:3306
+    env_file:
+      - 'backend.docker-env'
+
+  redis:
+    ports:
+      - 6379:6379
+    env_file:
+      - 'backend.docker-env'
+
+  # Consider adding mosquitto broker
+  mqtt:
+    ports:
+      - 1883:1883
+    env_file:
+      - 'backend.docker-env'
