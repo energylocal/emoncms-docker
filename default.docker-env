@@ -1,11 +1,11 @@
 # Default docker enviroment variables, change in production enviroment
 
-# MySQL database 
+# MySQL database
 MYSQL_HOST=db
 MYSQL_PORT=3306
 MYSQL_DATABASE=emoncms
 MYSQL_USER=emoncms
-MYSQL_PASSWORD=YOUR_SECURE_PASSWORD
+MYSQL_PASSWORD=emoncms
 MYSQL_RANDOM_ROOT_PASSWORD=yes
 MYSQL_INITDB_SKIP_TZINFO=true
 
