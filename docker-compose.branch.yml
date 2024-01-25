@@ -33,6 +33,7 @@ services:
       - ../:/opt/emoncms/modules
       - ../../energylocal/cydynni:/opt/emoncms/modules/cydynni
       - ./phpfina:/var/lib/phpfina
+      - ./log:/var/log/emoncms
     env_file:
       # Use default enviroment variables file for dev
       - 'default.docker-env'
