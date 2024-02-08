@@ -16,7 +16,7 @@ services:
       - ../../energylocal/cydynni/www/tariff:/var/www/emoncms/Modules/tariff
       - ../app:/var/www/emoncms/Modules/app
       - ../club2:/var/www/emoncms/Modules/club2
-      - ../demandshaper/demandshaper-module:/var/www/emoncms/Modules/demandshaper
+      - ../../energylocal/demandshaper/demandshaper-module:/var/www/emoncms/Modules/demandshaper
       - ../device:/var/www/emoncms/Modules/device
       - ../find:/var/www/emoncms/Modules/find
       - ../graph:/var/www/emoncms/Modules/graph
@@ -32,6 +32,7 @@ services:
       # - ../vis:/var/www/emoncms/Modules/vis
       - ../:/opt/emoncms/modules
       - ../../energylocal/cydynni:/opt/emoncms/modules/cydynni
+      - ../../energylocal/demandshaper:/opt/emoncms/modules/demandshaper
       - ./phpfina:/var/lib/phpfina
       - ./log:/var/log/emoncms
     env_file:
