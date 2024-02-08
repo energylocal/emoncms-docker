@@ -1,3 +1,6 @@
 emoncms/
 .docker-env
 *~
+sync_phpfina_from_live.sh
+phpfina
+log
