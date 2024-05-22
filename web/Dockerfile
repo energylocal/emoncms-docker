@@ -23,13 +23,15 @@ COPY install_mosquitto.sh /
 RUN chmod +x /install_mosquitto.sh
 RUN /install_mosquitto.sh
 
+# Enable Apache modules
 RUN a2enmod rewrite
+RUN a2enmod proxy
+RUN a2enmod proxy_http
 
 # Add custom PHP config
 COPY config/php.ini /usr/local/etc/php/
 
 # Add custom Apache config
-COPY config/emoncms.conf /etc/apache2/sites-available/emoncms.conf
 RUN a2dissite 000-default.conf
 RUN a2ensite emoncms
 

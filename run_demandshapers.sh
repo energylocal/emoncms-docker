@@ -1,5 +1,6 @@
 #!/bin/bash
 docker compose exec web /usr/local/bin/php /opt/emoncms/modules/cydynni/scripts/demandshapers/bethesda.php
+docker compose exec web /usr/local/bin/php /opt/emoncms/modules/cydynni/scripts/demandshapers/bethesda_solar.php
 docker compose exec web /usr/local/bin/php /opt/emoncms/modules/cydynni/scripts/demandshapers/corwen.php
 docker compose exec web /usr/local/bin/php /opt/emoncms/modules/cydynni/scripts/demandshapers/crickhowell.php
 docker compose exec web /usr/local/bin/php /opt/emoncms/modules/cydynni/scripts/demandshapers/repower.php
