@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  mqtt:
+    image: iegomez/mosquitto-go-auth
+    volumes:
+      - ./conf:/etc/mosquitto

@@ -38,15 +38,23 @@ services:
       driver: json-file
       options:
         max-size: "10m"
-          
+
+#  mqtt:
+#    image: eclipse-mosquitto:2.0
+#    build: mqtt/.
+#    restart: always
+#    logging:
+#      driver: json-file
+#      options:
+#        max-size: "10m"
+
+
   mqtt:
-    image: eclipse-mosquitto:2.0
-    build: mqtt/.
-    restart: always
-    logging:
-      driver: json-file
-      options:
-        max-size: "10m"
+    image: iegomez/mosquitto-go-auth
+    volumes:
+      - ./mosquitto-go-auth/conf:/etc/mosquitto
+    links:
+      - db
 
   mailhog:
     image: mailhog/mailhog

@@ -24,7 +24,7 @@ services:
       - ../postprocess/postprocess-module:/var/www/emoncms/Modules/postprocess
       # - ../process:/var/www/emoncms/Modules/process
       - ../provision:/var/www/emoncms/Modules/provision
-      - ../remoteaccess-server/remoteaccess-module:/var/www/emoncms/Modules/remoteaccess
+      - ../../energylocal/remoteaccess-server/remoteaccess-module:/var/www/emoncms/Modules/remoteaccess
       # - ../schedule:/var/www/emoncms/Modules/schedule
       - ../sync/sync-module:/var/www/emoncms/Modules/sync
       # - ../time:/var/www/emoncms/Modules/time

@@ -29,7 +29,9 @@ services:
       # - ../vis:/var/www/emoncms/Modules/vis
       - ../:/opt/emoncms/modules
       - ../../energylocal/cydynni:/opt/emoncms/modules/cydynni
+      - ../../energylocal/remoteaccess-server:/opt/emoncms/modules/remoteaccess-server
       - ./phpfina:/var/lib/phpfina
+      - ./mosquitto-go-auth/pw:/opt/mosquitto-go-auth/pw
     env_file:
       # Use default enviroment variables file for dev
       - 'default.docker-env'
