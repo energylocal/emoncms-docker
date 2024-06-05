@@ -35,6 +35,8 @@ services:
       - ../../energylocal/demandshaper:/opt/emoncms/modules/demandshaper
       - ./phpfina:/var/lib/phpfina
       - ./log:/var/log/emoncms
+      - ./tmp:/tmp
+      - ./mosquitto-go-auth/pw:/opt/mosquitto-go-auth/pw
     env_file:
       # Use default enviroment variables file for dev
       - 'default.docker-env'
