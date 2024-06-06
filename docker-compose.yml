@@ -1,6 +1,6 @@
 # Base docker compose, added to by docker-compose.override or docker-compose.prod. See Readme.md
 
-version: '2.23.2'
+version: '2'
 
 services:
   # PHP & apache container using offical Docker PHP iamge
@@ -10,7 +10,6 @@ services:
     build: web/.
     volumes:
       # mount docker volumes persistant inside docker container
-      - /home/tom/Work/EnergyLocal/docker/github.com/emoncms/emoncms-docker/web/config/emoncms.conf:/etc/apache2/sites-available/emoncms.conf
       - emon-phpfina:/var/opt/emoncms/phpfina
       - emon-phptimeseries:/var/opt/emoncms/phptimeseries
     links:

@@ -32,6 +32,7 @@ RUN a2enmod proxy_http
 COPY config/php.ini /usr/local/etc/php/
 
 # Add custom Apache config
+COPY config/emoncms.conf /etc/apache2/sites-available/emoncms.conf
 RUN a2dissite 000-default.conf
 RUN a2ensite emoncms
 

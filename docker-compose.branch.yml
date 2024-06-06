@@ -1,6 +1,6 @@
 # dev enviroment setup
 
-version: '2.23.2'
+version: '2'
 services:
 
   web:
@@ -35,6 +35,7 @@ services:
       - ../../energylocal/demandshaper:/opt/emoncms/modules/demandshaper
       - ./phpfina:/var/lib/phpfina
       - ./log:/var/log/emoncms
+        # - ./web/config/emoncms.conf:/etc/apache2/sites-available/emoncms.conf
     env_file:
       # Use default enviroment variables file for dev
       - 'default.docker-env'
