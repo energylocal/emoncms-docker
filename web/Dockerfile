@@ -23,7 +23,10 @@ COPY install_mosquitto.sh /
 RUN chmod +x /install_mosquitto.sh
 RUN /install_mosquitto.sh
 
+# Enable Apache modules
 RUN a2enmod rewrite
+RUN a2enmod proxy
+RUN a2enmod proxy_http
 
 # Add custom PHP config
 COPY config/php.ini /usr/local/etc/php/

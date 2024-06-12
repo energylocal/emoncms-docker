@@ -16,6 +16,8 @@ services:
       - db
       - redis
       - mqtt
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   db:
     image: mariadb:11.0
